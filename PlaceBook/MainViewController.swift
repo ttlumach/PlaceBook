@@ -23,12 +23,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
      }
      
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MainTableViewCell
         
-        cell.textLabel?.text = restaraunts[indexPath.row]
-        cell.imageView?.image = UIImage(named: restaraunts[indexPath.row])
-        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 2
-        cell.imageView?.clipsToBounds = true
+        cell.nameLabel.text = restaraunts[indexPath.row]
+        cell.placeImageView.image = UIImage(named: restaraunts[indexPath.row])
+        cell.placeImageView.layer.cornerRadius = cell.placeImageView.frame.size.height / 2
+        cell.placeImageView.clipsToBounds = true
         return cell
      }
     

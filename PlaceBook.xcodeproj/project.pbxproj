@@ -13,6 +13,7 @@
 		FAA9D8A9236D9E5A00C5D3CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA9D8A7236D9E5A00C5D3CE /* Main.storyboard */; };
 		FAA9D8AB236D9E5D00C5D3CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA9D8AA236D9E5D00C5D3CE /* Assets.xcassets */; };
 		FAA9D8AE236D9E5D00C5D3CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA9D8AC236D9E5D00C5D3CE /* LaunchScreen.storyboard */; };
+		FAA9D8B8236DF4DA00C5D3CE /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D8B7236DF4DA00C5D3CE /* MainTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FAA9D8AA236D9E5D00C5D3CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAA9D8AD236D9E5D00C5D3CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAA9D8AF236D9E5D00C5D3CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAA9D8B7236DF4DA00C5D3CE /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				FAA9D8A1236D9E5900C5D3CE /* AppDelegate.swift */,
 				FAA9D8A3236D9E5A00C5D3CE /* SceneDelegate.swift */,
 				FAA9D8A5236D9E5A00C5D3CE /* MainViewController.swift */,
+				FAA9D8B7236DF4DA00C5D3CE /* MainTableViewCell.swift */,
 				FAA9D8A7236D9E5A00C5D3CE /* Main.storyboard */,
 				FAA9D8AA236D9E5D00C5D3CE /* Assets.xcassets */,
 				FAA9D8AC236D9E5D00C5D3CE /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				FAA9D8A6236D9E5A00C5D3CE /* MainViewController.swift in Sources */,
 				FAA9D8A2236D9E5900C5D3CE /* AppDelegate.swift in Sources */,
+				FAA9D8B8236DF4DA00C5D3CE /* MainTableViewCell.swift in Sources */,
 				FAA9D8A4236D9E5A00C5D3CE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
