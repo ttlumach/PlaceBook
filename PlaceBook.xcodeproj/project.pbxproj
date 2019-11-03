@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA20A91B236EF19F0040F1AC /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20A91A236EF19F0040F1AC /* PlaceModel.swift */; };
 		FAA9D8A2236D9E5900C5D3CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D8A1236D9E5900C5D3CE /* AppDelegate.swift */; };
 		FAA9D8A4236D9E5A00C5D3CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D8A3236D9E5A00C5D3CE /* SceneDelegate.swift */; };
 		FAA9D8A6236D9E5A00C5D3CE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D8A5236D9E5A00C5D3CE /* MainViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA20A91A236EF19F0040F1AC /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		FAA9D89E236D9E5900C5D3CE /* PlaceBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaceBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA9D8A1236D9E5900C5D3CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAA9D8A3236D9E5A00C5D3CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA20A91C236F02E30040F1AC /* Main View */ = {
+			isa = PBXGroup;
+			children = (
+				FAA9D8A5236D9E5A00C5D3CE /* MainViewController.swift */,
+				FAA9D8B7236DF4DA00C5D3CE /* MainTableViewCell.swift */,
+			);
+			path = "Main View";
+			sourceTree = "<group>";
+		};
 		FAA9D895236D9E5900C5D3CE = {
 			isa = PBXGroup;
 			children = (
@@ -60,8 +71,8 @@
 			children = (
 				FAA9D8A1236D9E5900C5D3CE /* AppDelegate.swift */,
 				FAA9D8A3236D9E5A00C5D3CE /* SceneDelegate.swift */,
-				FAA9D8A5236D9E5A00C5D3CE /* MainViewController.swift */,
-				FAA9D8B7236DF4DA00C5D3CE /* MainTableViewCell.swift */,
+				FA20A91A236EF19F0040F1AC /* PlaceModel.swift */,
+				FA20A91C236F02E30040F1AC /* Main View */,
 				FAA9D8A7236D9E5A00C5D3CE /* Main.storyboard */,
 				FAA9D8AA236D9E5D00C5D3CE /* Assets.xcassets */,
 				FAA9D8AC236D9E5D00C5D3CE /* LaunchScreen.storyboard */,
@@ -143,6 +154,7 @@
 			files = (
 				FAA9D8A6236D9E5A00C5D3CE /* MainViewController.swift in Sources */,
 				FAA9D8A2236D9E5900C5D3CE /* AppDelegate.swift in Sources */,
+				FA20A91B236EF19F0040F1AC /* PlaceModel.swift in Sources */,
 				FAA9D8B8236DF4DA00C5D3CE /* MainTableViewCell.swift in Sources */,
 				FAA9D8A4236D9E5A00C5D3CE /* SceneDelegate.swift in Sources */,
 			);
