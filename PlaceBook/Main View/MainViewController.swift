@@ -9,9 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
     
-    let places: [Place] = [
+    @IBOutlet weak var mainTableView: UITableView!
+    
+    var places: [Place] = [
         Place(name: "Придністров'я", location: "м. Тлумач", type: "ресторан"),
         Place(name: "Рай-Гора", location: "м. Тлумач", type: "Ресторан"),
         Place(name: "Хатинка", location: "Івано-Франківськ", type: "їдальня-булочна"),
@@ -27,25 +28,46 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return places.count
      }
+    
      
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MainTableViewCell
         
-        cell.nameLabel.text = places[indexPath.row].name
-        cell.locationLabel.text = places[indexPath.row].location
-        cell.typeLabel.text = places[indexPath.row].type
-        cell.placeImageView.image = UIImage(named: places[indexPath.row].image)
+        let place = places[indexPath.row]
+        cell.nameLabel.text = place.name
+        cell.locationLabel.text = place.location
+        cell.typeLabel.text = place.type
+        
+        if place.image == nil {
+            cell.placeImageView.image = UIImage(named: place.placeImage)
+        } else {
+            cell.placeImageView.image = place.image
+        }
+        
+        
         cell.placeImageView.layer.cornerRadius = cell.placeImageView.frame.size.height / 2
         cell.placeImageView.clipsToBounds = true
+        
         return cell
      }
     
-    //MARK: Navigation
-    
-    @IBAction func cancelAction(_ segue: UIStoryboardSegue){
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    
+    //MARK: Navigation
+    
+    @IBAction func unwindSegue(_ segue: UIStoryboardSegue){
+        
+      guard let newPlaceVC = segue.source as? AddPlaceTableViewController else { return }
+
+        newPlaceVC.saveNewPlace()
+        places.append(newPlaceVC.newPlace!)
+        mainTableView.reloadData()
+        
+    }
     
 }
 

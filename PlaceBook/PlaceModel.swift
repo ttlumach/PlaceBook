@@ -6,16 +6,19 @@
 //  Copyright © 2019 Anton. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Place{
     var name: String
-    var location: String
-    var type: String
-    var image: String{
+    var location: String?
+    var type: String?
+    var description: String?
+    var image: UIImage?
+    
+    var placeImage: String{
         return name
     }
-    var description: String?
+
 }
 
 
