@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Place{
+struct Place {
     var name: String
     var location: String?
     var type: String?

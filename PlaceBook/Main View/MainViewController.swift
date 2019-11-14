@@ -23,6 +23,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        //navigationController?.navigationBar.barTintColor = .red
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,13 +41,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.locationLabel.text = place.location
         cell.typeLabel.text = place.type
         
-        if place.image == nil {
-            cell.placeImageView.image = UIImage(named: place.placeImage)
-        } else {
-            cell.placeImageView.image = place.image
-        }
-        
-        
+        cell.placeImageView.image = place.image ?? UIImage(named: place.placeImage)
         cell.placeImageView.layer.cornerRadius = cell.placeImageView.frame.size.height / 2
         cell.placeImageView.clipsToBounds = true
         
@@ -59,7 +55,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //MARK: Navigation
     
-    @IBAction func unwindSegue(_ segue: UIStoryboardSegue){
+    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
         
       guard let newPlaceVC = segue.source as? AddPlaceTableViewController else { return }
 
