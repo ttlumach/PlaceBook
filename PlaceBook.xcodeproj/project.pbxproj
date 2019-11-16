@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		FAA9D8AB236D9E5D00C5D3CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA9D8AA236D9E5D00C5D3CE /* Assets.xcassets */; };
 		FAA9D8AE236D9E5D00C5D3CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA9D8AC236D9E5D00C5D3CE /* LaunchScreen.storyboard */; };
 		FAA9D8B8236DF4DA00C5D3CE /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D8B7236DF4DA00C5D3CE /* MainTableViewCell.swift */; };
+		FAFA5415237D9BF900ADBFB1 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFA5414237D9BF900ADBFB1 /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		FAA9D8AD236D9E5D00C5D3CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAA9D8AF236D9E5D00C5D3CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAA9D8B7236DF4DA00C5D3CE /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		FAFA5414237D9BF900ADBFB1 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +56,6 @@
 				6E31FC3664EA5AB274A6E07A /* Pods-PlaceBook.debug.xcconfig */,
 				43EE1A0BC03B6EBE7E8F3D4D /* Pods-PlaceBook.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -107,6 +108,7 @@
 				FAA9D8A1236D9E5900C5D3CE /* AppDelegate.swift */,
 				FAA9D8A3236D9E5A00C5D3CE /* SceneDelegate.swift */,
 				FA20A91A236EF19F0040F1AC /* PlaceModel.swift */,
+				FAFA5414237D9BF900ADBFB1 /* StorageManager.swift */,
 				FAA9D8A7236D9E5A00C5D3CE /* Main.storyboard */,
 				FA20A91C236F02E30040F1AC /* Main View */,
 				FA20A91F236F0E4B0040F1AC /* AddPlace View */,
@@ -128,6 +130,7 @@
 				FAA9D89A236D9E5900C5D3CE /* Sources */,
 				FAA9D89B236D9E5900C5D3CE /* Frameworks */,
 				FAA9D89C236D9E5900C5D3CE /* Resources */,
+				06FF06543C1BCED66651A69C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -185,6 +188,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		06FF06543C1BCED66651A69C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlaceBook/Pods-PlaceBook-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlaceBook/Pods-PlaceBook-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlaceBook/Pods-PlaceBook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9ADB3C4E742D9C6B3EDCE2E5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -217,6 +237,7 @@
 				FAA9D8A6236D9E5A00C5D3CE /* MainViewController.swift in Sources */,
 				FAA9D8A2236D9E5900C5D3CE /* AppDelegate.swift in Sources */,
 				FA20A91B236EF19F0040F1AC /* PlaceModel.swift in Sources */,
+				FAFA5415237D9BF900ADBFB1 /* StorageManager.swift in Sources */,
 				FAA9D8B8236DF4DA00C5D3CE /* MainTableViewCell.swift in Sources */,
 				FAA9D8A4236D9E5A00C5D3CE /* SceneDelegate.swift in Sources */,
 				FA20A91E236F0E460040F1AC /* AddPlaceTableViewController.swift in Sources */,

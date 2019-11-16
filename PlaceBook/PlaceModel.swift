@@ -6,19 +6,24 @@
 //  Copyright © 2019 Anton. All rights reserved.
 //
 
-import UIKit
+import RealmSwift
 
-struct Place {
-    var name: String
-    var location: String?
-    var type: String?
-    var description: String?
-    var image: UIImage?
+class Place: Object {
+    @objc dynamic var name = ""
+    @objc dynamic var location: String?
+    @objc dynamic var type: String?
+    @objc dynamic var imageData: Data?
+    @objc dynamic var placeDescription: String?
+    @objc dynamic var date = Date()
     
-    var placeImage: String{
-        return name
+    convenience init(name: String, location: String?, type: String?, imageData: Data?, placeDescription: String?) {
+        self.init()
+        self.name = name
+        self.location = location
+        self.type = type
+        self.imageData = imageData
+        self.placeDescription = placeDescription
     }
-
 }
 
 
