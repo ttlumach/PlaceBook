@@ -163,4 +163,5 @@ extension AddPlaceTableViewController: UIImagePickerControllerDelegate, UINaviga
             StorageManager.saveObject(place: newPlace)
         }
     }
+    
 }
