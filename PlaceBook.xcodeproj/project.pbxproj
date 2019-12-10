@@ -10,6 +10,7 @@
 		16062B9461036E197B3BAD99 /* Pods_PlaceBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A01BA480B6D1C84343AFF4 /* Pods_PlaceBook.framework */; };
 		FA20A91B236EF19F0040F1AC /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20A91A236EF19F0040F1AC /* PlaceModel.swift */; };
 		FA20A91E236F0E460040F1AC /* AddPlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20A91D236F0E460040F1AC /* AddPlaceTableViewController.swift */; };
+		FA3840912392782F00B8A66D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3840902392782F00B8A66D /* MapViewController.swift */; };
 		FAA9D8A2236D9E5900C5D3CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D8A1236D9E5900C5D3CE /* AppDelegate.swift */; };
 		FAA9D8A4236D9E5A00C5D3CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D8A3236D9E5A00C5D3CE /* SceneDelegate.swift */; };
 		FAA9D8A6236D9E5A00C5D3CE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D8A5236D9E5A00C5D3CE /* MainViewController.swift */; };
@@ -17,7 +18,9 @@
 		FAA9D8AB236D9E5D00C5D3CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA9D8AA236D9E5D00C5D3CE /* Assets.xcassets */; };
 		FAA9D8AE236D9E5D00C5D3CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA9D8AC236D9E5D00C5D3CE /* LaunchScreen.storyboard */; };
 		FAA9D8B8236DF4DA00C5D3CE /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D8B7236DF4DA00C5D3CE /* MainTableViewCell.swift */; };
+		FAE041EF239AA3B80040C590 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE041EE239AA3B80040C590 /* MapManager.swift */; };
 		FAFA5415237D9BF900ADBFB1 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFA5414237D9BF900ADBFB1 /* StorageManager.swift */; };
+		FAFA54172382B5E700ADBFB1 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFA54162382B5E700ADBFB1 /* RatingControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,7 @@
 		6E31FC3664EA5AB274A6E07A /* Pods-PlaceBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceBook.debug.xcconfig"; path = "Target Support Files/Pods-PlaceBook/Pods-PlaceBook.debug.xcconfig"; sourceTree = "<group>"; };
 		FA20A91A236EF19F0040F1AC /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		FA20A91D236F0E460040F1AC /* AddPlaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceTableViewController.swift; sourceTree = "<group>"; };
+		FA3840902392782F00B8A66D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = PlaceBook/MapViewController.swift; sourceTree = SOURCE_ROOT; };
 		FAA9D89E236D9E5900C5D3CE /* PlaceBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaceBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA9D8A1236D9E5900C5D3CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAA9D8A3236D9E5A00C5D3CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,7 +39,9 @@
 		FAA9D8AD236D9E5D00C5D3CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAA9D8AF236D9E5D00C5D3CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAA9D8B7236DF4DA00C5D3CE /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		FAE041EE239AA3B80040C590 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		FAFA5414237D9BF900ADBFB1 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		FAFA54162382B5E700ADBFB1 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +86,18 @@
 			isa = PBXGroup;
 			children = (
 				FA20A91D236F0E460040F1AC /* AddPlaceTableViewController.swift */,
+				FAFA54162382B5E700ADBFB1 /* RatingControl.swift */,
 			);
 			path = "AddPlace View";
+			sourceTree = "<group>";
+		};
+		FA38408D2392772400B8A66D /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				FA3840902392782F00B8A66D /* MapViewController.swift */,
+				FAE041EE239AA3B80040C590 /* MapManager.swift */,
+			);
+			path = MapView;
 			sourceTree = "<group>";
 		};
 		FAA9D895236D9E5900C5D3CE = {
@@ -105,18 +121,51 @@
 		FAA9D8A0236D9E5900C5D3CE /* PlaceBook */ = {
 			isa = PBXGroup;
 			children = (
-				FAA9D8A1236D9E5900C5D3CE /* AppDelegate.swift */,
-				FAA9D8A3236D9E5A00C5D3CE /* SceneDelegate.swift */,
-				FA20A91A236EF19F0040F1AC /* PlaceModel.swift */,
-				FAFA5414237D9BF900ADBFB1 /* StorageManager.swift */,
-				FAA9D8A7236D9E5A00C5D3CE /* Main.storyboard */,
+				FAE041F2239ABD9C0040C590 /* Interface Builder */,
 				FA20A91C236F02E30040F1AC /* Main View */,
 				FA20A91F236F0E4B0040F1AC /* AddPlace View */,
-				FAA9D8AA236D9E5D00C5D3CE /* Assets.xcassets */,
-				FAA9D8AC236D9E5D00C5D3CE /* LaunchScreen.storyboard */,
-				FAA9D8AF236D9E5D00C5D3CE /* Info.plist */,
+				FA38408D2392772400B8A66D /* MapView */,
+				FAE041F0239ABD420040C590 /* Models */,
+				FAE041F3239ABDFD0040C590 /* Database */,
+				FAE041F1239ABD6F0040C590 /* Support */,
 			);
 			path = PlaceBook;
+			sourceTree = "<group>";
+		};
+		FAE041F0239ABD420040C590 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA20A91A236EF19F0040F1AC /* PlaceModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FAE041F1239ABD6F0040C590 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				FAA9D8AA236D9E5D00C5D3CE /* Assets.xcassets */,
+				FAA9D8A3236D9E5A00C5D3CE /* SceneDelegate.swift */,
+				FAA9D8A1236D9E5900C5D3CE /* AppDelegate.swift */,
+				FAA9D8AF236D9E5D00C5D3CE /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		FAE041F2239ABD9C0040C590 /* Interface Builder */ = {
+			isa = PBXGroup;
+			children = (
+				FAA9D8A7236D9E5A00C5D3CE /* Main.storyboard */,
+				FAA9D8AC236D9E5D00C5D3CE /* LaunchScreen.storyboard */,
+			);
+			path = "Interface Builder";
+			sourceTree = "<group>";
+		};
+		FAE041F3239ABDFD0040C590 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				FAFA5414237D9BF900ADBFB1 /* StorageManager.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +287,9 @@
 				FAA9D8A2236D9E5900C5D3CE /* AppDelegate.swift in Sources */,
 				FA20A91B236EF19F0040F1AC /* PlaceModel.swift in Sources */,
 				FAFA5415237D9BF900ADBFB1 /* StorageManager.swift in Sources */,
+				FA3840912392782F00B8A66D /* MapViewController.swift in Sources */,
+				FAFA54172382B5E700ADBFB1 /* RatingControl.swift in Sources */,
+				FAE041EF239AA3B80040C590 /* MapManager.swift in Sources */,
 				FAA9D8B8236DF4DA00C5D3CE /* MainTableViewCell.swift in Sources */,
 				FAA9D8A4236D9E5A00C5D3CE /* SceneDelegate.swift in Sources */,
 				FA20A91E236F0E460040F1AC /* AddPlaceTableViewController.swift in Sources */,
@@ -387,7 +439,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZG7535M7XW;
-				INFOPLIST_FILE = PlaceBook/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PlaceBook/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -406,7 +458,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZG7535M7XW;
-				INFOPLIST_FILE = PlaceBook/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PlaceBook/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

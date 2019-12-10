@@ -9,8 +9,10 @@
 import UIKit
 
 class AddPlaceTableViewController: UITableViewController {
-    var currentPlace: Place?
-    var imageIsPicked = false
+    var currentPlace: Place!
+    private var imageIsPicked = false
+    var segueForShowPlaceIdentifier = "showPlaceGeolocation"
+    var segueForChoosePlaceIdentifier = "choosePlaceGeolocation"
     
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -18,10 +20,15 @@ class AddPlaceTableViewController: UITableViewController {
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var typeField: UITextField!
     @IBOutlet weak var descriptionField: UITextField!
+    @IBOutlet var ratingControl: RatingControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0,
+                                                         y: 0,
+                                                         width: tableView.frame.size.width,
+                                                         height: tableView.frame.size.height))
         saveButton.isEnabled = false
         nameField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         setupEditScreen()
@@ -73,15 +80,40 @@ class AddPlaceTableViewController: UITableViewController {
             
             placeImage.image = image
             placeImage.contentMode = .scaleAspectFill
-            nameField.text = currentPlace?.name
+            nameField.text = currentPlace.name
             locationField.text = currentPlace?.location
             typeField.text = currentPlace?.type
-            descriptionField.text = currentPlace?.placeDescription        }
+            descriptionField.text = currentPlace?.placeDescription
+            ratingControl.rating = Int(currentPlace.rating)
+        }
+    }
+    
+    //MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard
+            let identifier = segue.identifier,
+            let MVC = segue.destination as? MapViewController
+            else { return }
+        
+        MVC.incomeSegueIdentifier = identifier
+        MVC.mapViewControllerDelegate = self
+        
+        if identifier == segueForShowPlaceIdentifier {
+            MVC.place.name = nameField.text!
+            MVC.place.location = locationField.text
+            MVC.place.type = typeField.text
+            MVC.place.imageData = placeImage.image?.pngData()
+        }
+    
     }
     
     private func setupNavigationBar() {
         if let topItem = navigationController?.navigationBar.topItem {
-            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+            topItem.backBarButtonItem = UIBarButtonItem(title: "",
+                                                        style: .plain,
+                                                        target: nil,
+                                                        action: nil)
         }
         navigationItem.leftBarButtonItem = nil
         navigationItem.title = currentPlace?.name
@@ -125,7 +157,8 @@ extension AddPlaceTableViewController: UIImagePickerControllerDelegate, UINaviga
         }
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         placeImage.image = info[.editedImage] as? UIImage
         placeImage.contentMode = .scaleAspectFill
         placeImage.clipsToBounds = true
@@ -149,7 +182,8 @@ extension AddPlaceTableViewController: UIImagePickerControllerDelegate, UINaviga
             location: locationField.text,
             type: typeField.text,
             imageData: image?.pngData(),
-            placeDescription: descriptionField.text
+            placeDescription: descriptionField.text,
+            rating: Double(ratingControl.rating)
         )
         if currentPlace != nil {
             try! realm.write {
@@ -158,10 +192,16 @@ extension AddPlaceTableViewController: UIImagePickerControllerDelegate, UINaviga
                 currentPlace?.location = newPlace.location
                 currentPlace?.placeDescription = newPlace.placeDescription
                 currentPlace?.imageData = newPlace.imageData
+                currentPlace?.rating = newPlace.rating
             }
         } else {
             StorageManager.saveObject(place: newPlace)
         }
     }
-    
+}
+
+extension AddPlaceTableViewController: MapViewControllerDelegate {
+    func getAddress(address: String?) {
+        locationField.text = address
+    }
 }

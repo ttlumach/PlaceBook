@@ -23,8 +23,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return searchController.isActive && !searchBarIsEmpty
     }
     
-    @IBOutlet weak var mainTableView: UITableView!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet var mainTableView: UITableView!
+    @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var reversedSortingButton: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -47,29 +47,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //MARK: TableViewDataSource
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isSearching {
-            return filteredPlaces.count
-        } else {
-            return places.count
-        }
-     }
+            return isSearching ? filteredPlaces.count : places.count
+    }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceCell", for: indexPath) as! MainTableViewCell
         
         var place = Place()
-        if isSearching {
-            place = filteredPlaces[indexPath.row]
-        } else {
-            place = places[indexPath.row]
-        }
+        place = isSearching ?  filteredPlaces[indexPath.row] : places[indexPath.row]
         
         cell.nameLabel.text = place.name
         cell.locationLabel.text = place.location
         cell.typeLabel.text = place.type
         cell.placeImageView.image = UIImage(data: place.imageData!)
-        cell.placeImageView.layer.cornerRadius = cell.placeImageView.frame.size.height / 2
-        cell.placeImageView.clipsToBounds = true
+        cell.cosmosView.rating = place.rating
+
         return cell
      }
     
@@ -102,11 +94,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if segue.identifier == "showDetail"{
             guard let indexPath = mainTableView.indexPathForSelectedRow else { return }
             var place = Place()
-            if isSearching {
-                place = filteredPlaces[indexPath.row]
-            } else {
-                place = places[indexPath.row]
-            }
+            place = isSearching ? filteredPlaces[indexPath.row] : places[indexPath.row]
             
             let newPlaceVC = segue.destination as! AddPlaceTableViewController
             newPlaceVC.currentPlace = place

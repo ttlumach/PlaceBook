@@ -7,10 +7,21 @@
 //
 
 import UIKit
+import Cosmos
 
 class MainTableViewCell: UITableViewCell {
-    @IBOutlet weak var placeImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet var placeImageView: UIImageView! {
+        didSet {
+            placeImageView.layer.cornerRadius = placeImageView.frame.size.height / 2
+            placeImageView.clipsToBounds = true
+        }
+    }
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var locationLabel: UILabel!
+    @IBOutlet var typeLabel: UILabel!
+    @IBOutlet var cosmosView: CosmosView! {
+        didSet {
+            cosmosView.clipsToBounds = true
+        }
+    }
 }
